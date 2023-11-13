@@ -14,11 +14,12 @@ function startPromiseGener(e) {
   let i = 0;
   let amount = 0;
   let step = 0;
+  let position = 0;
+  let delay = 0;
   e.preventDefault();
   amount = refs.amount.value;
   step = Number(refs.step.value);
-  let delay = Number(refs.delay.value);
-  let position = 0;
+  delay = Number(refs.delay.value);
   for (i; i < amount; i += 1) {
     position += 1;
 
