@@ -35,16 +35,17 @@ function startPromiseGener(e) {
   position = 0;
   i = 0;
   refs.form.reset();
-}
-function createPromise(position, delay) {
-  return new Promise((resolve, reject) => {
-    const shouldResolve = Math.random() > 0.3;
-    timerId = setTimeout(() => {
-      if (shouldResolve) {
-        resolve({ position, delay });
-      } else {
-        reject({ position, delay });
-      }
-    }, delay);
-  });
+
+  function createPromise(position, delay) {
+    return new Promise((resolve, reject) => {
+      const shouldResolve = Math.random() > 0.3;
+      timerId = setTimeout(() => {
+        if (shouldResolve) {
+          resolve({ position, delay });
+        } else {
+          reject({ position, delay });
+        }
+      }, delay);
+    });
+  }
 }
