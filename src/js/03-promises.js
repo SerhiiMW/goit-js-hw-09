@@ -17,7 +17,7 @@ function startPromiseGener(e) {
   let position = 0;
   let delay = 0;
   e.preventDefault();
-  amount = refs.amount.value;
+  amount = Number(refs.amount.value);
   step = Number(refs.step.value);
   delay = Number(refs.delay.value);
   for (i; i < amount; i += 1) {
@@ -34,18 +34,16 @@ function startPromiseGener(e) {
   }
   position = 0;
   i = 0;
-  refs.form.reset();
-
-  function createPromise(position, delay) {
-    return new Promise((resolve, reject) => {
-      const shouldResolve = Math.random() > 0.3;
-      timerId = setTimeout(() => {
-        if (shouldResolve) {
-          resolve({ position, delay });
-        } else {
-          reject({ position, delay });
-        }
-      }, delay);
-    });
-  }
+}
+function createPromise(position, delay) {
+  return new Promise((resolve, reject) => {
+    const shouldResolve = Math.random() > 0.3;
+    timerId = setTimeout(() => {
+      if (shouldResolve) {
+        resolve({ position, delay });
+      } else {
+        reject({ position, delay });
+      }
+    }, delay);
+  });
 }
