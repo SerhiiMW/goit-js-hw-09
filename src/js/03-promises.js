@@ -11,7 +11,7 @@ const refs = {
 refs.form.addEventListener('submit', startPromiseGener);
 
 function startPromiseGener(e) {
-  // let i = 0;
+  let i = 0;
   // const amount = 0;
   // const step = 0;
   let position = 0;
@@ -20,7 +20,7 @@ function startPromiseGener(e) {
   const amount = Number(refs.amount.value);
   const step = Number(refs.step.value);
   const delay = Number(refs.delay.value);
-  for (let i = 0; i < amount; i += 1) {
+  for (i = 0; i < amount; i += 1) {
     position += 1;
 
     createPromise(position, delay)
