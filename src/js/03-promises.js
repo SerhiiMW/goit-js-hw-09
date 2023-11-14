@@ -1,4 +1,4 @@
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
   form: document.querySelector('.form'),
@@ -11,7 +11,7 @@ const refs = {
 refs.form.addEventListener('submit', startPromiseGener);
 
 function startPromiseGener(e) {
-  let i = 0;
+  // let i = 0;
   // const amount = 0;
   // const step = 0;
   let position = 0;
@@ -20,17 +20,17 @@ function startPromiseGener(e) {
   const amount = Number(refs.amount.value);
   const step = Number(refs.step.value);
   const delay = Number(refs.delay.value);
-  for (i; i < amount; i += 1) {
+  for (let i; i < amount; i += 1) {
     position += 1;
 
     createPromise(position, delay)
       .then(({ position, delay }) => {
-        // Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
-        console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        // console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
       })
       .catch(({ position, delay }) => {
-        // Notify.success(`❌ Rejected promise ${position} in ${delay}ms`);
-        console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+        Notify.success(`❌ Rejected promise ${position} in ${delay}ms`);
+        // console.log(`❌ Rejected promise ${position} in ${delay}ms`);
       });
   }
   position = 0;
