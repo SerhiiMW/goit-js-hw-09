@@ -14,7 +14,7 @@ function startPromiseGener(e) {
   let i = 0;
   const amount = 0;
   const step = 0;
-  const position = 0;
+  let position = 0;
   const delay = 0;
   e.preventDefault();
   amount = Number(refs.amount.value);
