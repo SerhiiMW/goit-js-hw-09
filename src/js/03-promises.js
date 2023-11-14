@@ -31,7 +31,9 @@ function startPromiseGener(e) {
       });
     delay += step;
   }
-}
+position = 0;
+i = 0;
+
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
@@ -43,4 +45,5 @@ function createPromise(position, delay) {
       }
     }, delay);
   });
+}
 }
