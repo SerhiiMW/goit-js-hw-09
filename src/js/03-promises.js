@@ -13,6 +13,7 @@ let step = 0;
 let delay = 0;
 let i = 0;
 let position = 0;
+let timerId = null;
 
 function startPromiseGener(e) {
   amount = Number(refs.amount.value);
