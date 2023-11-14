@@ -33,8 +33,6 @@ function startPromiseGener(e) {
         // console.log(`❌ Rejected promise ${position} in ${delay}ms`);
       });
   }
-  position = 0;
-  i = 0;
 }
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
