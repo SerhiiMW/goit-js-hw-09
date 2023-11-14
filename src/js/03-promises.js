@@ -20,7 +20,7 @@ function startPromiseGener(e) {
   const amount = Number(refs.amount.value);
   const step = Number(refs.step.value);
   const delay = Number(refs.delay.value);
-  for (let i; i < amount; i += 1) {
+  for (let i = 0; i < amount; i += 1) {
     position += 1;
 
     createPromise(position, delay)
