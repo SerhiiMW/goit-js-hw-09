@@ -12,14 +12,14 @@ refs.form.addEventListener('submit', startPromiseGener);
 
 function startPromiseGener(e) {
   let i = 0;
-  const amount = 0;
-  const step = 0;
+  // const amount = 0;
+  // const step = 0;
   let position = 0;
-  const delay = 0;
+  // const delay = 0;
   e.preventDefault();
-  amount = Number(refs.amount.value);
-  step = Number(refs.step.value);
-  delay = Number(refs.delay.value);
+  const amount = Number(refs.amount.value);
+  const step = Number(refs.step.value);
+  const delay = Number(refs.delay.value);
   for (i; i < amount; i += 1) {
     position += 1;
 
