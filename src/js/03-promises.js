@@ -30,7 +30,6 @@ function startPromiseGener(e) {
       .catch(({ position, delay }) => {
         Notify.success(`❌ Rejected promise ${position} in ${delay}ms`);
       });
-    delay += step;
   }
   position = 0;
   i = 0;
