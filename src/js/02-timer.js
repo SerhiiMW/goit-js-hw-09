@@ -39,12 +39,14 @@ function convertMs(ms) {
 flatpickr(selector, options);
 
 selector.addEventListener('input', () => {
+
   if (new Date(selector.value) <= new Date()) {
     startBtn.disabled = true;
     window.alert('Please choose a date in the future');
   } else {
-    startBtn.disabled = false;
     startBtn.addEventListener('click', () => {
+      selector.disabled = true;
+      startBtn.disabled = true;
       timerId = setInterval(() => {
         const currentDate = new Date();
         const userDate = new Date(selector.value);
@@ -65,8 +67,11 @@ selector.addEventListener('input', () => {
         refs.hours.textContent === '00' &&
         refs.days.textContent === '00') {
           clearInterval(timerId);
+          selector.disabled = false;
+          startBtn.disabled = false;
         }
       }, 1000);
     });
   }
 });
+
